@@ -1,0 +1,31 @@
+{
+    "name": "vovayatsyuk/flarum-ext-auth-magento",
+    "description": "Allow users to log in with Magento based store.",
+    "type": "flarum-extension",
+    "keywords": ["authentication"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vova Yatsyuk",
+            "email": "vova.yatsyuk@gmail.com"
+        }
+    ],
+    "require": {
+        "flarum/core": "^0.1.0-beta.3",
+        "league/oauth1-client": "^1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vovayatsyuk\\Auth\\Magento\\": "src/"
+        }
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "Magento Login",
+            "icon": {
+                "image": "icon.svg",
+                "backgroundColor": "#ef672f"
+            }
+        }
+    }
+}
