@@ -75,13 +75,14 @@ class MagentoAuthController implements ControllerInterface
             $_GET['oauth_verifier']
         );
 
-        // @todo: create magento module that will provide
-        // user info endpoint for the currently authenticated user
         $user = $server->getUserDetails($tokenCredentials);
-
-        return $this->authenticate(
-            ['email' => $user->email],
-            ['username' => $user->firstname]
+        $email = $user->email;
+        $username = preg_replace(
+            '/[^a-z0-9-_]/i',
+            '',
+            $user->firstName . $user->lastName
         );
+
+        return $this->authenticate(compact('email'), compact('username'));
     }
 }
