@@ -9,8 +9,8 @@ account.
 authenticated user, so this module can't receive any user details after
 authentication.~~
 
-OAuth 1.0 Client [finally has](thephpleague/oauth1-client#59) a built-in support
-for magento stores.
+OAuth 1.0 Client [finally has](https://github.com/thephpleague/oauth1-client/pull/59)
+a built-in support for magento stores.
 
 ## Installation
 
