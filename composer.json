@@ -10,6 +10,10 @@
             "email": "vova.yatsyuk@gmail.com"
         }
     ],
+    "support": {
+        "issues": "https://github.com/vovayatsyuk/flarum-ext-auth-magento/issues",
+        "source": "https://github.com/vovayatsyuk/flarum-ext-auth-magento"
+    },
     "require": {
         "flarum/core": "^0.1.0-beta.3",
         "league/oauth1-client": "^1.6"
