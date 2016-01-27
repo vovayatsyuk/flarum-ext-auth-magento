@@ -17,7 +17,6 @@ a built-in support for magento stores.
 ## Installation
 
 ```
-composer config repositories.vovayatsyuk/flarum-ext-auth-magento vcs git@github.com:vovayatsyuk/flarum-ext-auth-magento.git
 composer require vovayatsyuk/flarum-ext-auth-magento
 ```
 
