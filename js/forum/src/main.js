@@ -9,7 +9,12 @@ app.initializers.add('vovayatsyuk-auth-magento', () => {
       <LogInButton
         className="Button LogInButton--magento"
         path="/auth/magento">
-        {app.translator.trans('vovayatsyuk-auth-magento.log_in.button', app.forum.attribute('vovayatsyuk-auth-magento.storeName'))}
+        {
+          app.translator.trans(
+            'vovayatsyuk-auth-magento.forum.log_in.button',
+            { site: app.forum.attribute('vovayatsyuk-auth-magento.storeName') }
+          )
+        }
       </LogInButton>
     );
   });

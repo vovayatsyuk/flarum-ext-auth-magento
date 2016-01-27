@@ -1,3 +1,4 @@
 vovayatsyuk-auth-magento:
-  log_in:
-    button: "Log in with {site}"
+  forum:
+    log_in:
+      button: "Log in with {site}"
