@@ -3,6 +3,7 @@
 namespace Vovayatsyuk\Auth\Magento\Listener;
 
 use Flarum\Event\ConfigureClientView;
+use Flarum\Event\ConfigureLocales;
 use Illuminate\Contracts\Events\Dispatcher;
 
 class AddClientAssets
@@ -13,6 +14,7 @@ class AddClientAssets
     public function subscribe(Dispatcher $events)
     {
         $events->listen(ConfigureClientView::class, [$this, 'addAssets']);
+        $events->listen(ConfigureLocales::class, [$this, 'addLocales']);
     }
 
     /**
@@ -33,6 +35,20 @@ class AddClientAssets
                 __DIR__ . '/../../js/admin/dist/extension.js'
             ]);
             $event->addBootstrapper('vovayatsyuk/auth/magento/main');
+        }
+    }
+
+    /**
+     * @param ConfigureLocales $event
+     */
+    public function addLocales(ConfigureLocales $event)
+    {
+        $localeDir = realpath(__DIR__ .'/../../locale');
+        foreach (new \DirectoryIterator($localeDir) as $file) {
+            if ($file->isFile() && in_array($file->getExtension(), ['yml', 'yaml'])) {
+                $locale = pathinfo($file->getBasename(), PATHINFO_FILENAME);
+                $event->locales->addTranslations($locale, $file->getPathname());
+            }
         }
     }
 }
