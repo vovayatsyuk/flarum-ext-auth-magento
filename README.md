@@ -3,7 +3,9 @@
 Extension provides ability to authenticate into Flarum forum with Magento store
 account.
 
-![Flarum login popup](/resources/docs/images/login_popup.png)
+Frontend | Backend Settings
+---------|-----------------
+![Flarum login popup](/resources/docs/images/login_popup.png) | ![Flarum login popup](/resources/docs/images/settings.png)
 
 ## ~~It's not working yet~~ It works! :+1:
 
