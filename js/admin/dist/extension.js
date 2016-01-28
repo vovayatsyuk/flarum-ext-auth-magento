@@ -34,6 +34,34 @@ System.register('vovayatsyuk/auth/magento/components/MagentoSettingsModal', ['fl
               m(
                 'label',
                 null,
+                'Log In Button Settings'
+              ),
+              m(
+                'div',
+                { className: 'Form-group--column50' },
+                m(
+                  'label',
+                  null,
+                  'Store Name'
+                ),
+                m('input', { className: 'FormControl', placeholder: 'Magento', bidi: this.setting('vovayatsyuk-auth-magento.store_name') })
+              ),
+              m(
+                'div',
+                { className: 'Form-group--column50' },
+                m(
+                  'label',
+                  null,
+                  'Background'
+                ),
+                m('input', { className: 'FormControl', placeholder: '#ef672f', bidi: this.setting('vovayatsyuk-auth-magento.background_color') })
+              )
+            ), m(
+              'div',
+              { className: 'Form-group' },
+              m(
+                'label',
+                null,
                 'Store URL'
               ),
               m('input', { className: 'FormControl', bidi: this.setting('vovayatsyuk-auth-magento.store_url') })

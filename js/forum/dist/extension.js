@@ -19,9 +19,10 @@ System.register('vovayatsyuk/auth/magento/main', ['flarum/extend', 'flarum/app',
           items.add('magento', m(
             LogInButton,
             {
+              style: "background: color".replace('color', app.forum.attribute('vovayatsyuk-auth-magento.background_color')),
               className: 'Button LogInButton--magento',
               path: '/auth/magento' },
-            'Log in with Magento'
+            app.translator.trans('vovayatsyuk-auth-magento.forum.log_in.button', { site: app.forum.attribute('vovayatsyuk-auth-magento.store_name') })
           ));
         });
       });
