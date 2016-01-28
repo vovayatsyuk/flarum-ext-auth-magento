@@ -32,7 +32,8 @@ class AddClientAssets
 
         if ($event->isAdmin()) {
             $event->addAssets([
-                __DIR__ . '/../../js/admin/dist/extension.js'
+                __DIR__ . '/../../js/admin/dist/extension.js',
+                __DIR__ . '/../../less/admin/extension.less'
             ]);
             $event->addBootstrapper('vovayatsyuk/auth/magento/main');
         }

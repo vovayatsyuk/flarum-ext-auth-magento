@@ -36,8 +36,18 @@ class AddApiAttributes
     public function prepareApiAttributes(PrepareApiAttributes $event)
     {
         if ($event->isSerializer(ForumSerializer::class)) {
-            $event->attributes['vovayatsyuk-auth-magento.storeName'] = 'Magento'; //$this->settings->get('vovayatsyuk-auth-magento.store_url');
-            $event->attributes['vovayatsyuk-auth-magento.buttonColor'] = '#000';
+            $attributes = array(
+                'vovayatsyuk-auth-magento' => array(
+                    'store_name' => 'Magento',
+                    'background_color' => '#ef672f',
+                )
+            );
+            foreach ($attributes as $namespace => $keys) {
+                foreach ($keys as $key => $default) {
+                    $event->attributes[$namespace . '.' . $key] =
+                        $this->settings->get($namespace . '.' . $key) ?: $default;
+                }
+            }
         }
     }
 }

@@ -12,6 +12,18 @@ export default class MagentoSettingsModal extends SettingsModal {
   form() {
     return [
       <div className="Form-group">
+        <label>Log In Button Settings</label>
+        <div className="Form-group--column50">
+          <label>Store Name</label>
+          <input className="FormControl" placeholder="Magento" bidi={this.setting('vovayatsyuk-auth-magento.store_name')}/>
+        </div>
+        <div className="Form-group--column50">
+          <label>Background</label>
+          <input className="FormControl" placeholder="#ef672f" bidi={this.setting('vovayatsyuk-auth-magento.background_color')}/>
+        </div>
+      </div>,
+
+      <div className="Form-group">
         <label>Store URL</label>
         <input className="FormControl" bidi={this.setting('vovayatsyuk-auth-magento.store_url')}/>
       </div>,
